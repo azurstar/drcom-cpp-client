@@ -10,13 +10,13 @@ find_package(yaml-cpp REQUIRED)
 
 include_directories(${OPENSSL_INCLUDE_DIR} ${CMAKE_SOURCE_DIR})
 
-add_executable(drcom-cpp-client
+add_executable(drcom_client
     main.cpp
     config.cpp
     utils.cpp
 )
 
-target_link_libraries(drcom-cpp-client
+target_link_libraries(drcom_client
     OpenSSL::SSL
     OpenSSL::Crypto
     yaml-cpp
