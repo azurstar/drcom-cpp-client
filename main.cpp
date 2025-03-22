@@ -3,6 +3,7 @@
 #include <sstream>
 #include <vector>
 #include <cstring>
+#include <cstdio>
 #include <cstdlib>
 #include <ctime>
 #include <chrono>
@@ -547,6 +548,11 @@ int main() {
     DEBUG_MODE = config.DEBUG;
     log_path = config.LOG_PATH;
     
+    if (remove(log_path.c_str()) == 0) {
+        std::cout << "旧日志删除成功" << std::endl;
+    } else {
+        perror("旧日志删除失败");
+    }
     std::string bind_ip = "0.0.0.0";
     if (!config.nic_name.empty())
         bind_ip = bind_nic(config.nic_name);
