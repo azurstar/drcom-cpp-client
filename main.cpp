@@ -9,6 +9,7 @@
 #include <thread>
 #include <stdexcept>
 #include <arpa/inet.h>
+#include <sys/time.h>
 #include <sys/socket.h>
 #include <unistd.h>
 #include <net/if.h>
